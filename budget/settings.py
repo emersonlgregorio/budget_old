@@ -57,8 +57,8 @@ INSTALLED_APPS = [
     'core',
     'empresa',
     #apps de terceiros
-    'debug_panel',
-    'debug_toolbar',
+    #'debug_panel',
+    #'debug_toolbar',
     'widget_tweaks',
 ]
 
