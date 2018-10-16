@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+  <h2> <b>Unidades</b> </h2>
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert altert-danger">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  {% if unidade %}
+    <table class="table table-striped">
+      <thead>
+        <th>Unidade / Fazenda</th>
+        <th>Ha físico</th>
+        <th colspan="2" style="text-align-center">Ações</th>
+      </thead>
+      <tbody>
+        {% for c in unidade %}
+          <tr>
+            <td>{{ c.unidade }}</td>
+            <td>{{ c.ha_fisico }}</td>
+            <td> <a href="#" class="btn btn-info btn-xs">Editar</a> </td>
+            <td> <a href="#" class="btn btn-info btn-xs">Excluir</a> </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <div class="alert alert-info">
+      <p>Não existem Unidades cadastradas!</p>
+    </div>
+  {%endif%}
+  <a href="{% url 'empresa:nova_unidade' %}" class="btn btn-primary" role='button'>Adicionar Unidade</a>
+{% endblock body %}

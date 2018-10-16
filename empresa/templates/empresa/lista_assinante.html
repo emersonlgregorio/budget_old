@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+  <h2> <b>Empresas</b> </h2>
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  {% if assinante %}
+    <table class="table table-striped">
+      <thead>
+        <th>CPF-CNPJ</th>
+        <th>Nome</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>Contato</th>
+        <th colspan="2"  style="text-align-center">Ações</th>
+      </thead>
+      <tbody>
+        {% for c in assinante %}
+          <tr>
+            <td>{{ c.cpf_cnpj }}</td>
+            <td>{{ c.nome }}</td>
+            <td>{{ c.cidade }}</td>
+            <td>{{ c.estado }}</td>
+            <td>{{ c.contato }}</td>
+            <td> <a href="#" class="btn btn-info btn-xs btn-sm">Editar</a> </td>
+            <td> <a href="#" class="btn btn-danger btn-xs btn-sm">Cancelar</a> </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    {% endif %}
+    </table>
+{% endblock body %}

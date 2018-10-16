@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+  <h2> <b>Lista Cultura</b> </h2>
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger">
+        {{ message }}
+      </div>
+    {%endfor%}
+  {%endif%}
+  {% if cultura %}
+  <table class="table table-striped table-sm">
+    <thead>
+      <th class="col-2">Cultura</th>
+      <th colspan="2" style="text-align:center">Ações</th>
+    </thead>
+    <tbody>
+      {% for c in cultura %}
+        <tr>
+          <td>{{ c.nome }}</td>
+          <td> <a href="#" class="btn btn-info btn-xs btn-sm">Editar</a></td>
+          <td> <a href="#" class="btn btn-danger btn-xs btn-sm">Excluir</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <div class="alert alert-info">
+      <p>Não existem culturas cadastradas!</p>
+    </div>
+  {% endif %}
+  <a href="{% url 'empresa:nova_cultura' %}" class="btn btn-primary" role="button">Adicionar Cultura</a>
+{% endblock body %}

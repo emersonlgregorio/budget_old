@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+  <div class="">
+    <h2> <b>Plano de Contas</b> </h2>
+    <form class="" action="" method="post">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group">
+          <label for="{{ form.codigo.id_for_label }}">Código</label>
+          {{ form.codigo|add_class:"form-control" }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-6">
+          <label for="{{ form.descricao.id_for_label }}">Descrição</label>
+          {{ form.descricao|add_class:"form-control" }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-2">
+          <label for="{{ form.tipo.id_for_label }}">Tipo de Conta</label>
+          {{ form.tipo|add_class:"form-control" }}
+        </div>
+        <div class="form-group col-2">
+          <label for="{{ form.grupo.id_for_label }}">Grupo?</label>
+          {{ form.grupo|add_class:"form-control"}}
+        </div>
+        <div class="form-group col-2">
+          <label for="{{ form.dre.id_for_label }}">DRE?</label>
+          {{ form.dre|add_class:"form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" name="button" class="btn btn-primary">Salvar</button>
+
+      </div>
+    </form>
+  </div>
+{% endblock body %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+  <div class="container">
+    <h2><b>Empresa</b></h2>
+    <form class="" action="" method="post">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="col-3">
+          <label for="{{ form.cpf_cnpj.id_for_label }}">CPF ou CNPJ</label>
+          {{ form.cpf_cnpj|add_class:"form-control" }}
+        </div>
+        <div class="col-6">
+          <label for="{{ form.nome.id_for_label }}">Nome</label>
+          {{ form.nome|add_class:"form-control" }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="{{ form.cep.id_for_label }}">CEP</label>
+          {{ form.cep|add_class:"form-control" }}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="{{ form.cidade.id_for_label }}">Cidade</label>
+            {{ form.cidade|add_class:"form-control" }}
+        </div>
+        <div class="form-group col-md-1">
+          <label for="{{ form.estado.id_for_label }}">Estado</label>
+            {{ form.estado|add_class:"form-control" }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="{{ form.endereco.id_for_label }}">Endereço</label>
+          {{ form.endereco|add_class:"form-control" }}
+        </div>
+        <div class="form-group col-md-1">
+          <label for="{{ form.numero.id_for_label }}">Número</label>
+          {{ form.numero|add_class:"form-control" }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="{{ form.bairro.id_for_label }}">Bairro</label>
+          {{ form.bairro|add_class:"form-control" }}
+        </div>
+        <div class="form-group col-md-3">
+          <label for="{{ form.fone.id_for_label }}">Fone</label>
+          {{ form.fone|add_class:"form-control" }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">E-mail</label>
+          {{ form.email|add_class:"form-control" }}
+      </div>
+      <div class="form-group">
+        <label for="{{ form.contato.id_for_label }}">Contato</label>
+          {{ form.contato|add_class:"form-control" }}
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+    </form>
+  </div>
+{% endblock body %}
