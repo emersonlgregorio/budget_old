@@ -54,6 +54,10 @@ def nova_safra(request):
         form = SafraForm()
     return render (request, 'empresa/form_safra.html', {'form':form})
 
+def lista_safra(request):
+    safra = Safra.objects.all()
+    return render(request, 'empresa/lista_safra.html', {'safra':safra})
+
 #Formulario Cultura
 def nova_cultura(request):
     if request.method == 'POST':
