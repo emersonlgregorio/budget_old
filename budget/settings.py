@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ff3e0n&p2-2b4lk+b93u_98st40ozg@haamw7nz@jw8ewh%fav'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 CACHES = {
     'default': {
@@ -41,7 +41,7 @@ CACHES = {
     }
 }
 
-ALLOWED_HOSTS = ['127.0.0.1', 'pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.pythonanywhere.com']
 
 
 # Application definition
@@ -57,8 +57,6 @@ INSTALLED_APPS = [
     'core',
     'empresa',
     #apps de terceiros
-    #'debug_panel',
-    #'debug_toolbar',
     'widget_tweaks',
 ]
 
@@ -71,7 +69,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'debug_panel.middleware.DebugPanelMiddleware,',
 ]
 
 ROOT_URLCONF = 'budget.urls'
